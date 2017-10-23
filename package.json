@@ -1,0 +1,48 @@
+{
+  "name": "kovi",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "apollo-client": "^1.2.2",
+    "auth0-lock": "^10.16.0",
+    "dotenv": "^4.0.0",
+    "jwt-decode": "^2.2.0",
+    "lodash": "^4.17.4",
+    "material-ui": "^0.18.0",
+    "prop-types": "^15.5.8",
+    "randomstring": "^1.1.5",
+    "raven-js": "^3.16.1",
+    "react": "^15.6.1",
+    "react-apollo": "^1.2.0",
+    "react-autosize-textarea": "^0.4.8",
+    "react-dom": "^15.6.1",
+    "react-dropzone": "^4.1.2",
+    "react-ga": "^2.3.5",
+    "react-headroom": "^2.1.5",
+    "react-infinite-scroll-component": "^2.3.0",
+    "react-media": "^1.6.1",
+    "react-modal": "^2.2.2",
+    "react-popover": "^0.4.16",
+    "react-quill": "^1.0.0",
+    "react-redux": "^5.0.4",
+    "react-router-dom": "^4.1.1",
+    "react-tap-event-plugin": "^2.0.1",
+    "react-transition-group": "^2.2.0",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^2.1.1",
+    "subscriptions-transport-ws": "^0.7.3"
+  },
+  "devDependencies": {
+    "enzyme": "^2.9.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "0.9.5",
+    "react-test-renderer": "^15.6.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
