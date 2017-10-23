@@ -61,7 +61,7 @@ const Navbar = (props) => {
 
   return(
     <AppBar
-      title={<span style={styles.title}>Starter</span>}
+      title={<span style={styles.title}>HackerMatch</span>}
       onTitleTouchTap={handleTouchTap}
       style={styles.navbar}
       iconElementRight={renderUserControls()}

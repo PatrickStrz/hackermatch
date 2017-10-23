@@ -1,4 +1,5 @@
-## Starter Pack for a react/redux/apollo-client application for easy project generation.
+## Community for developers and talented partners to meet up and build amazing
+side businesses. 
 
 ### inludes:
 - authentication,
