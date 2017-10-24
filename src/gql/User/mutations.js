@@ -43,9 +43,6 @@ export const CREATE_USER_MUTATION = gql`
       name: $name,
       picture: $picture,
       pictureLarge: $pictureLarge,
-      scorecard:{
-        total:0
-      }
     ){
       ...userPayload
     }

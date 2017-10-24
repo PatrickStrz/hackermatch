@@ -61,9 +61,8 @@ class SyncUser extends Component {
       const response = await props.updateUserMutation(options)
       if (response.data.updateUser) {
         const user = response.data.updateUser
-        props.handleUserSyncSuccess(user.id, user.scorecard.id)
+        props.handleUserSyncSuccess(user.id)
         //dispatches action that marks user as synced and sets apiUserId +
-        // apiScorecardId on localStorage and redux state
       }
     }
     catch(err){
@@ -83,7 +82,7 @@ class SyncUser extends Component {
 
       if (response.data.createUser.id) {
         const user = response.data.createUser
-        props.handleUserSyncSuccess(user.id, user.scorecard.id)
+        props.handleUserSyncSuccess(user.id)
       }
     }
     catch(err){

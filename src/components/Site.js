@@ -25,17 +25,12 @@ class Site extends Component {
     userSyncRequired: PropTypes.bool,
     isAuthenticated: PropTypes.bool,
     profile: PropTypes.object,
-    apiUserScorecardId: PropTypes.string,
   }
 
   constructor(props) {
     super(props)
     /* check is Auth0 lock is authenticating after calling AuthService login: */
     this.props.checkLogin()
-  }
-
-  state = {
-    scoreboardVisible:false
   }
 
   shouldSyncUser = () => {
@@ -54,7 +49,6 @@ class Site extends Component {
       profile,
       userSyncSuccess,
       children,
-      apiUserScorecardId,
     } = this.props
 
     const renderSyncUser = () => {
@@ -75,16 +69,12 @@ class Site extends Component {
     return(
       <div>
         {/* Header hidden on down scroll: */}
-        <Headroom style={styles.headroom}
-          onPin={()=>this.setState({scorecardVisible:false})}
-          onUnpin={()=>this.setState({scorecardVisible:true})}
-          >
+        <Headroom style={styles.headroom}>
           <Navbar
             handleLogout={logout}
             handleLogin={login}
             isAuthenticated={isAuthenticated}
             profile={profile}
-            userScorecardId={apiUserScorecardId}
           />
         </Headroom>
         {/* component that syncs or creates a user depending on redux state: */}
@@ -105,7 +95,6 @@ const mapStateToProps = (state) => {
     userSyncRequired: state.app.auth.userSyncRequired,
     isAuthenticated: state.app.auth.isAuthenticated,
     profile: state.app.auth.profile,
-    apiUserScorecardId: state.app.auth.apiUserScorecardId
   }
 }
 

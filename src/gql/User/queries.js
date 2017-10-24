@@ -13,10 +13,6 @@ export const USER_QUERY = gql`
     User(id:$id){
       name
       pictureLarge
-      scorecard{
-        id
-        total
-      }
     }
   }
 `

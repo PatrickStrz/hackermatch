@@ -2,9 +2,7 @@ import * as ActionTypes from '../actions/types'
 import AuthService from '../lib/AuthService'
 
 const isAuthenticated = () => {
-  if (!AuthService.isTokenExpired() &&
-      AuthService.getApiUserId() &&
-      AuthService.getApiUserScorecardId()) {
+  if (!AuthService.isTokenExpired() && AuthService.getApiUserId()) {
     return true
   }
   else {
@@ -14,10 +12,7 @@ const isAuthenticated = () => {
 
 const isUserSyncRequired = () => {
   if(
-    !AuthService.loggedIn() ||
-    !AuthService.getApiUserId() ||
-    !AuthService.getApiUserId()
-  ){
+    !AuthService.loggedIn() || !AuthService.getApiUserId()) {
     return true
   }
   else {
@@ -34,7 +29,6 @@ const initialState = {
   userSyncRequired: isUserSyncRequired(),
   error: null,
   apiUserId: AuthService.getApiUserId(),
-  apiUserScorecardId: AuthService.getApiUserScorecardId(),
   isAuthenticated: isAuthenticated()
 }
 
@@ -65,7 +59,6 @@ export default function authReducer(state=initialState, action) {
         profile: {},
         userSynced: false,
         apiUserId:'',
-        apiUserScorecardId: '',
         isAuthenticated: false,
       }
     case ActionTypes.USER_SYNC_SUCCESS:
@@ -73,7 +66,6 @@ export default function authReducer(state=initialState, action) {
         ...state,
         apiUserId: action.apiUserId,
         userSyncRequired: false,
-        apiUserScorecardId: action.apiUserScorecardId,
         isAuthenticated: true
       }
     default:

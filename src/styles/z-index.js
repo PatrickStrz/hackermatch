@@ -27,8 +27,6 @@ export const CARD_Z_INDEX = z.index1
 /* popover */
 export const POPOVER_Z_INDEX = z.index2//So that popovers show over modals
 
-export const SCOREBOARD_Z_INDEX = z.index2
-
 export const HEADER_Z_INDEX = z.index3
 
 export const DRAWER_OVERLAY_Z_INDEX = z.index4
