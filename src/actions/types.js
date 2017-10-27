@@ -7,24 +7,6 @@ export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS'
 /*------------------- Graphcool Api ------------------------*/
 export const USER_SYNC_SUCCESS = 'USER_SYNC_SUCCESS'
 
-/*------------------- Challenge ------------------------*/
-export const SHOW_CREATE_CHALLENGE_VIEW = 'SHOW_CREATE_CHALLENGE_VIEW'
-export const HIDE_CREATE_CHALLENGE_VIEW = 'HIDE_CREATE_CHALLENGE_VIEW'
-
-export const SHOW_UPDATE_CHALLENGE_VIEW = 'SHOW_UPDATE_CHALLENGE_VIEW'
-export const HIDE_UPDATE_CHALLENGE_VIEW = 'HIDE_UPDATE_CHALLENGE_VIEW'
-
-export const CHALLENGE_CREATED = 'CHALLENGE_CREATED'
-
-/*------------------- Scores ------------------------*/
-export const NEW_COMMUNITY_SCORE = 'NEW_COMMUNITY_SCORE'
-export const INITIAL_COMMUNITY_SCORE = 'INITIAL_COMMUNITY_SCORE'
-
-export const REQUEST_REFETCH_USER_SCORE = 'REQUEST_REFETCH_USER_SCORE'
-export const REFETCH_USER_SCORE_COMPLETE = 'REFETCH_USER_SCORE_COMPLETE'
-
-export const RESET_LAST_CONTRIBUTOR = 'RESET_LAST_CONTRIBUTOR'
-
 /*------------------- Editor ------------------------*/
 export const EDITOR_CHANGE = 'EDITOR_CHANGE'
 export const CLEAR_EDITOR = 'CLEAR_EDITOR'
@@ -48,12 +30,3 @@ export const HIDE_COMMUNITY_MOBILE = 'HIDE_COMMUNITY_MOBILE'
 export const SHOW_GENERIC_ALERT = 'SHOW_GENERIC_ALERT'
 export const SHOW_ERROR_ALERT = 'SHOW_ERROR_ALERT'
 export const HIDE_ALERT = 'HIDE_ALERT'
-
-/*------------------- Products ------------------------*/
-export const SHOW_PRODUCT_SOLUTION_CREATE_VIEW = 'SHOW_PRODUCT_SOLUTION_CREATE_VIEW'
-export const HIDE_PRODUCT_SOLUTION_CREATE_VIEW = 'HIDE_PRODUCT_SOLUTION_CREATE_VIEW'
-
-/*------------------- Community ------------------------*/
-
-export const REQUEST_REFETCH_LEADERBOARD = 'REQUEST_REFETCH_LEADERBOARD'
-export const REFETCH_LEADERBOARD_COMPLETE = 'REFETCH_LEADERBOARD_COMPLETE'

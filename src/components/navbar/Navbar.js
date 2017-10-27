@@ -81,7 +81,6 @@ Navbar.propTypes = {
   handleLogin: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   profile: PropTypes.object.isRequired,
-  userScorecardId: PropTypes.string,
 }
 
 export default withRouter(Navbar)
