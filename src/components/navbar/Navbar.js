@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 //other
 import styled from 'styled-components'
 import {withRouter} from 'react-router'
-import {muiColors} from 'styles/theme/colors'
+import {muiColors, palette} from 'styles/theme/colors'
 //components
-import AppBar from 'material-ui/AppBar'
 import UserIconMenu from './UserIconMenu'
 import IconButton from 'material-ui/IconButton'
 import AccountCircle from 'material-ui/svg-icons/action/account-circle'
@@ -21,13 +20,6 @@ const Navbar = (props) => {
   } = props
 
   const styles = {
-    title: {
-      cursor: 'pointer',
-      color: '#3f51b5',
-    },
-    navbar: {
-      backgroundColor:"#ffffff",
-    },
     accountCircleIcon: {
       width: 30,
       height: 30,
@@ -60,14 +52,31 @@ const Navbar = (props) => {
   }
 
   return(
-    <AppBar
-      title={<span style={styles.title}>HackerMatch</span>}
-      onTitleTouchTap={handleTouchTap}
-      style={styles.navbar}
-      iconElementRight={renderUserControls()}
-    />
+    <AppBar>
+      <Title onClick={()=>handleTouchTap()}>
+        HackerMatch
+      </Title>
+      <div>{renderUserControls()}</div>
+    </AppBar>
+
   )
 }
+const AppBar = styled.div`
+  margin-top: 15px;
+  padding: 10px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const Title = styled.div`
+  display: inline;
+  color: ${palette.primary2};
+  cursor: pointer;
+  font-size: 30px;
+`
 
 const RightElementBox = styled.div`
   display: flex;

@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Site from 'components/Site'
 import Home from 'components/Home'
 import RouteChange from 'components/RouteChange'
+import ProfileForm from 'components/ProfileForm'
 
 class App extends Component {
   devRoute = `/${process.env.REACT_APP_DEV_ROUTE}/`
@@ -20,6 +21,7 @@ class App extends Component {
                 <Route exact path={this.devRoute}
                   render={() => <h1>Secret dev page</h1>}
                 />
+                <Route exact path="/createprofile" component={ProfileForm}/>
                 <Route path="/" component={Home} />
               </Switch>
             </Site>
