@@ -1,3 +1,21 @@
+
+/* monochromatic pallete created using: palleton.com
+  http://paletton.com/#uid=13u0u0kGoxzn7H2tOFQI1pTLgk5 --> pallete
+  primary color used to generate pallete: '#024770'
+ */
+export const palette = {
+  primary0: '#066BA7', //lightest
+  primary1: '#035788',
+  primary2: '#024770', //main color
+  primary3: '#013756',
+  primary4: '#002337', //Darkest shade
+  accent: '#50E3C2',
+  important: '#FD5368'
+}
+/* primary 1 should be used for regular buttons. Primary 2 for Cards.
+  Or other large body type elements.
+*/
+
 export const muiColors = {
   primary1: '#3f51b5',
   primary100: '#C5CAE9',
