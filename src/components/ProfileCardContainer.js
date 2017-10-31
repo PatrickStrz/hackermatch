@@ -6,9 +6,7 @@ import {PROFILE_CARD_SHADOW} from 'styles/shadows'
 export class ProfileCardContainer extends Component {
   render(){
     return(
-      <OuterBox>
-
-      </OuterBox>
+      <OuterBox/>
     )
   }
 }

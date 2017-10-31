@@ -38,6 +38,7 @@ const Box = styled.div`
 OutlineButton.propTypes = {
   name: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
+  size: PropTypes.string.isRequired,
 }
 
 export default OutlineButton
