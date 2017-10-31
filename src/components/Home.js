@@ -1,15 +1,44 @@
 import React,{Component} from 'react'
-import {Link} from 'react-router-dom'
+import styled from 'styled-components'
+import {palette} from 'styles/theme/colors'
+//components
+import {OutlineButton} from 'ui-kit'
+import {withRouter} from 'react-router-dom'
 
 class Home extends Component {
+  redirect = (route) => {
+    this.props.history.push(route)
+  }
   render(){
     return(
-      <div>
-        <h1>Welcome!</h1>
-        <Link to='/createprofile'>createprofile</Link>
-      </div>
+      <PageBox>
+        <Header>
+          where <strong>developers</strong> and <strong>partners</strong> find each other
+            to build profitable side businesses.
+        </Header>
+        <OutlineButton
+          onClick={()=>this.redirect('/createprofile')}
+          name="Start Your Journey"
+          size="lg"
+        />
+      </PageBox>
     )
   }
 }
 
-export default Home
+const Header = styled.div`
+  color: ${palette.secondary};
+  font-size: 25px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+  text-align: center;
+`
+const PageBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+export default withRouter(Home)

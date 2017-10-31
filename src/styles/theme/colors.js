@@ -10,6 +10,7 @@ export const palette = {
   primary3: '#013756',
   primary4: '#002337', //Darkest shade
   accent: '#50E3C2',
+  secondary: '#4A90E2',
   important: '#FD5368'
 }
 /* primary 1 should be used for regular buttons. Primary 2 for Cards.
