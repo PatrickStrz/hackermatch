@@ -18,7 +18,7 @@ export const palette = {
 */
 
 export const muiColors = {
-  primary1: '#3f51b5',
+  primary1: '#50E3C2', //'#3f51b5'  <--old
   primary100: '#C5CAE9',
   secondary1: '#38c1be',
   tertiary1: '#00f7f9',

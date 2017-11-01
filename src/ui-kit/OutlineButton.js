@@ -13,6 +13,8 @@ const OutlineButton = (props) => {
 
 const Box = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 5px;
   cursor: pointer;
   border: solid 3px ${palette.accent};
@@ -35,6 +37,7 @@ const Box = styled.div`
     }
     }};
 `
+
 OutlineButton.propTypes = {
   name: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
