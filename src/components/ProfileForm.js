@@ -1,15 +1,25 @@
 import React, {Component} from 'react'
-import {Avatar} from 'ui-kit'
 import styled from 'styled-components'
-const imageUrl = 'https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/14079619_10154275347846251_1836046172102598566_n.jpg?oh=3523f954198098d7892a1af82eb14711&oe=5AA4C81C'
+import {palette} from 'styles/theme/colors'
+//components
 import {InputWithCharLimit} from 'ui-kit'
-import {FillBox} from 'ui-kit'
+import Checkbox from 'material-ui/Checkbox'
+
 /* Only render if logged in with Auth0 */
 export default class ProfileForm extends Component {
   state = {
     tagline:'',
     tagglineError:'',
+    hackerChecked: false,
   }
+
+  updateCheck = () => {
+    console.log('clicked')
+    this.setState({
+        hackerChecked: !this.state.hackerChecked,
+    })
+  }
+
   handleTaglineChange = (input) => {
     this.setState({tagline: input})
   }
@@ -22,8 +32,14 @@ export default class ProfileForm extends Component {
   render(){
     return(
       <PageBox>
-        <Avatar size="80px" imageUrl={imageUrl}/>
-        <FillBox size="xl"/>
+        <br/>
+        <br/>
+        <Checkbox
+          label="I'm a Developer"
+          onCheck={this.updateCheck}              // style={styles.checkbox}
+        />
+        <br/>
+        <br/>
         <InputWithCharLimit
           onChange={this.handleTaglineChange}
           value={this.state.tagline}
@@ -38,7 +54,7 @@ export default class ProfileForm extends Component {
 
 const PageBox = styled.div`
   padding: 30px;
-  display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 `
