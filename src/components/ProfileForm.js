@@ -5,6 +5,7 @@ import {palette} from 'styles/theme/colors'
 import {InputWithCharLimit} from 'ui-kit'
 import Checkbox from 'material-ui/Checkbox'
 import {OutlineButton} from 'ui-kit'
+import {UserCard} from 'ui-kit'
 
 /* Only render if logged in with Auth0 */
 export default class ProfileForm extends Component {
@@ -32,6 +33,7 @@ export default class ProfileForm extends Component {
 }
   render(){
     return(
+      <div>
       <PageBox>
         <br/>
         <br/>
@@ -48,14 +50,20 @@ export default class ProfileForm extends Component {
           placeholder="Your tagline here"
           onError={this.handleTaglineError}
         />
-        <br/>
-        <br/>
-        <OutlineButton
-          name="Complete Profile"
-          size = "md"
-          onClick={()=>console.log('mutate')}
-        />
-      </PageBox>
+        </PageBox>
+        <PageBox>
+          <br/>
+          <br/>
+          <UserCard tagline={this.state.tagline}/>
+          <br/>
+          <br/>
+          <OutlineButton
+            name="Complete Profile"
+            size = "md"
+            onClick={()=>console.log('mutate')}
+          />
+        </PageBox>
+      </div>
     )
   }
 }
