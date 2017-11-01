@@ -25,6 +25,21 @@ export const UPDATE_USER_MUTATION = gql`
   }
   ${USER_PAYLOAD_FRAGMENT}
 `
+export const UPDATE_USER_PROFILE_MUTATION = gql`
+  mutation updateUser(
+    $id: ID!,
+    $isHacker: Boolean,
+    $tagline: String
+  ){
+    updateUser(
+      id: $id,
+      hacker: $isHacker,
+    ){
+      ...userPayload
+    }
+  }
+  ${USER_PAYLOAD_FRAGMENT}
+`
 export const CREATE_USER_MUTATION = gql`
   mutation createUser(
     $idToken: String!,

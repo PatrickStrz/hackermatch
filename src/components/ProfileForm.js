@@ -4,6 +4,7 @@ import {palette} from 'styles/theme/colors'
 //components
 import {InputWithCharLimit} from 'ui-kit'
 import Checkbox from 'material-ui/Checkbox'
+import {OutlineButton} from 'ui-kit'
 
 /* Only render if logged in with Auth0 */
 export default class ProfileForm extends Component {
@@ -36,7 +37,7 @@ export default class ProfileForm extends Component {
         <br/>
         <Checkbox
           label="I'm a Developer"
-          onCheck={this.updateCheck}              // style={styles.checkbox}
+          onCheck={this.updateCheck}
         />
         <br/>
         <br/>
@@ -46,6 +47,13 @@ export default class ProfileForm extends Component {
           charMax={80}
           placeholder="Your tagline here"
           onError={this.handleTaglineError}
+        />
+        <br/>
+        <br/>
+        <OutlineButton
+          name="Complete Profile"
+          size = "md"
+          onClick={()=>console.log('mutate')}
         />
       </PageBox>
     )
@@ -57,4 +65,8 @@ const PageBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`
+
+const ButtonBox = styled.div`
+  width: 100px;
 `
