@@ -7,14 +7,10 @@ import {checkLogin, logout, userSyncSuccess} from 'actions/auth-actions'
 //helpers + other
 import {withRouter} from 'react-router-dom'
 import {login} from 'lib/auth'
-import {
-  HEADER_Z_INDEX,
-} from 'styles/z-index'
 //components
 import SyncUser from 'components/SyncUser'
 import Alert from 'components/Alert'
 import Navbar from 'components/navbar/Navbar'
-import Headroom from 'react-headroom'
 
 class Site extends Component {
 
@@ -60,23 +56,14 @@ class Site extends Component {
         />)
       }
 
-    const styles = {
-      headroom: {
-        zIndex: HEADER_Z_INDEX
-      },
-    }
-
     return(
       <div>
-        {/* Header hidden on down scroll: */}
-        <Headroom style={styles.headroom}>
           <Navbar
             handleLogout={logout}
             handleLogin={login}
             isAuthenticated={isAuthenticated}
             profile={profile}
           />
-        </Headroom>
         {/* component that syncs or creates a user depending on redux state: */}
         { this.shouldSyncUser() && renderSyncUser() }
         <div>

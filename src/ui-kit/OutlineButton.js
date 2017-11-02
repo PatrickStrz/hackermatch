@@ -11,15 +11,22 @@ const OutlineButton = (props) => {
   )
 }
 
+const mainColor = palette.accent
+
 const Box = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: auto;
+  text-align: center;
   padding: 5px;
   cursor: pointer;
-  border: solid 3px ${palette.accent};
+  border: solid 3px ${mainColor};
   border-radius: 1px;
-  color: ${palette.accent};
+  color: ${mainColor};
+  transition: all .2s ease-in-out;
+  :hover{
+    color: white;
+    background-color: ${mainColor};
+    transform: scale(1,1.1);
+  }
   font-size: ${props => {
     switch (props.size) {
     case 'xs':
