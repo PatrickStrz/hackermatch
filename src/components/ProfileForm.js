@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
-import {palette} from 'styles/theme/colors'
 //components
 import {InputWithCharLimit} from 'ui-kit'
 import Checkbox from 'material-ui/Checkbox'
@@ -31,16 +30,21 @@ export default class ProfileForm extends Component {
     this.setState({taglineError:errorMsg})
   } // prevent infinite loop
 }
+  getBadgeValue = () => {
+    return this.state.hackerChecked && 'H'
+  }
   render(){
     return(
       <div>
-      <PageBox>
+        <FormBox>
         <br/>
         <br/>
-        <Checkbox
-          label="I'm a Developer"
-          onCheck={this.updateCheck}
-        />
+        <div>
+          <Checkbox
+            label="I'm a Developer"
+            onCheck={this.updateCheck}
+          />
+        </div>
         <br/>
         <br/>
         <InputWithCharLimit
@@ -50,31 +54,29 @@ export default class ProfileForm extends Component {
           placeholder="Your tagline here"
           onError={this.handleTaglineError}
         />
-        </PageBox>
-        <PageBox>
           <br/>
           <br/>
-          <UserCard tagline={this.state.tagline}/>
+          <UserCard
+            tagline={this.state.tagline}
+            badgeValue={this.getBadgeValue()}
+          />
           <br/>
           <br/>
           <OutlineButton
             name="Complete Profile"
-            size = "md"
+            size="md"
             onClick={()=>console.log('mutate')}
           />
-        </PageBox>
+        </FormBox>
       </div>
     )
   }
 }
 
-const PageBox = styled.div`
-  padding: 30px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
 
-const ButtonBox = styled.div`
-  width: 100px;
+const FormBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
 `

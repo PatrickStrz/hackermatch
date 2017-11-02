@@ -173,5 +173,6 @@ const materialShadows = {
 // Shadow Applications
 // --------------------------------------------------
 
-export const PROFILE_CARD_SHADOW = materialShadows.dp12.both
+export const PROFILE_CARD_SHADOW = materialShadows.dp6.both
+export const PROFILE_CARD_SHADOW_FOCUSED = materialShadows.dp16.both
 export const MORE_INFO_SHADOW = shadows.level2
